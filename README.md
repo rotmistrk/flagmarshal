@@ -31,14 +31,14 @@ help:
 ## EXAMPLE
 ```go
 type MyArgs struct {
-    StrVal string `flag:"s,str" help:"string value"`
-    IntVal int    `flag:"i,int" help:"integer value"`
+    StrVal string `flag:"s,name" help:"string value"`
+    IntVal int    `flag:"i,id"   help:"integer value"`
     ...
 }
 
 func main() {
     args := MyArgs{intVal: 5}  // default values
-    err := flagmarshal.ParseFlags(&args)
+    positional, err := flagmarshal.ParseFlags(&args)
     ...
 }
 ```
